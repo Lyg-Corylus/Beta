@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <label for="UserName">Username:</label>
+        <input type="text" name="username" id="UserName" required>
+        <label for="Password">Password:</label>
+        <input type="password" name="password" id="Password" required>
+        <button type="submit">Ingresar</button>
+    </form>
+    <!-- Botón de inicio de sesión con Google -->
+    <a href="{% url 'social:begin' 'google-oauth2' %}">Iniciar sesión con Google</a>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <!-- Pasar los mensajes a una variable JavaScript -->
+    <script>
+        var djangoMessages = [];
+        {% if messages %}
+            {% for message in messages %}
+                djangoMessages.push({
+                    tags: '{{ message.tags }}',
+                    message: '{{ message }}'
+                });
+            {% endfor %}
+        {% endif %}
+    </script>
+    <!-- Incluir tu archivo JavaScript -->
+    <script src="{% static 'assets/js/alerta_login.js' %}"></script>
+</body>
+</html>

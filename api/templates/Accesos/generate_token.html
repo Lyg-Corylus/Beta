@@ -1,0 +1,19 @@
+<!-- templates/generate_token.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Access Token</title>
+</head>
+<body>
+    <h1>Generate Access Token</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Generate Token">
+    </form>
+    {% if access_url %}
+        <p>Use this URL to access home:</p>
+        <a href="{{ access_url }}">{{ access_url }}</a>
+    {% endif %}
+</body>
+</html>
