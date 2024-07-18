@@ -177,8 +177,7 @@ EMAIL_HOST_USER = ''  # Reemplaza con tu dirección de Gmail
 EMAIL_HOST_PASSWORD = ''  # Reemplaza con tu contraseña de Gmail o usa una variable de entorno
 DEFAULT_FROM_EMAIL = ''  # Dirección de remitente por defecto
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '723930609705-v5ifh8oa5qu61c086vne1buu111mp6fg.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+
 SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = ['email', 'profile']
 SOCIAL_AUTH_GOOGLE_OAUTH2_USE_DEPRECATED_API = True  # Solo si es necesario
 
